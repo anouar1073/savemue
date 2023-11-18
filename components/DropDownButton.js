@@ -135,7 +135,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_2xs,
   },
   dropdownbuttonItem: {
-    height: "26.25%",
+    height: "36.25%",
     width: "12.13%",
     top: "30%",
     right: "79.67%",
@@ -143,20 +143,20 @@ const styles = StyleSheet.create({
     left: "8.2%",
   },
   symptome: {
-    height: "35%",
+    height: "65%",
     width: "52.46%",
-    top: "29.38%",
+    top: "9.38%",
     left: "23.77%",
-    fontSize: FontSize.size_7xs,
-    fontWeight: "500",
+    fontSize: FontSize.size_8xs,
+    fontWeight: "700",
     fontFamily: FontFamily.inter,
     color: Color.black,
     textAlign: "left",
     position: "absolute",
   },
   dropdownbutton: {
-    width: 61,
-    height: 16,
+    width: "70%",
+    height: "50%",
   },
 });
 
