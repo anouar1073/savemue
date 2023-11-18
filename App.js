@@ -13,13 +13,20 @@ import SettingsScreen from "./screens/SettingsScreen";
 import StormScreen from "./screens/StormScreen";
 import HeatwaveScreen from "./screens/HeatwaveScreen";
 import MapScreen from "./screens/MapScreen";
+import {  useFonts, Inter_900Black } from '@expo-google-fonts/inter';
 
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { View, Text, Pressable, TouchableOpacity } from "react-native";
 
 const App = () => {
   const [hideSplashScreen, setHideSplashScreen] = React.useState(true);
+    let [fontsLoaded] = useFonts({
+    "Inter":Inter_900Black,
+  });
 
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <>

@@ -6,6 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 import { Border, FontSize, Color, FontFamily } from "../GlobalStyles";
 import {Dimensions} from 'react-native';
+import {ScrollView} from 'react-native-gesture-handler';
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -17,112 +18,117 @@ const MainScreen = () => {
   return (
     <View style={styles.mainScreen}>
       <NavBar style={styles.navBar} navBarPosition="absolute" navBarTop={0}/>
-      <View style={styles.mainScreeenBackground}>
-        <View style={[styles.background7, styles.blur1Position]} />
-        <Text
-          style={[
-            styles.handlungsempfehlungenFrBrg1,
-            styles.duBistOfflineContainerFlexBox,
-          ]}
-        >
-          Handlungsempfehlungen für Bürger:
-        </Text>
-        <Pressable
-          style={[styles.infoPanelssunnyPannel, styles.infoShadowBox1]}
-          onPress={() => navigation.navigate("HeatwaveScreen")}
-        >
-          <View style={[styles.background8, styles.backgroundPosition1]} />
-          <Text style={[styles.hitze, styles.hitzeTypo]}> Hitze</Text>
-          <Image
-            style={[styles.heatWave1Icon1, styles.iconLayout]}
-            contentFit="cover"
-            source={require("../assets/heatwave-1.png")}
-          />
-        </Pressable>
-        <View style={[styles.infoPanelsstarkesGewitter, styles.infoShadowBox]}>
-          <View style={[styles.background9, styles.backgroundPosition]} />
-          <Text style={[styles.starkesGewitter, styles.hitzeTypo]}>
-            Starkes Gewitter
-          </Text>
-          <Image
-            style={styles.storm1Icon1}
-            contentFit="cover"
-            source={require("../assets/storm-1.png")}
-          />
-        </View>
-        <View style={[styles.infoPanelsglatteisPannel, styles.infoShadowBox1]}>
-          <View style={[styles.background10, styles.backgroundPosition1]} />
-          <Text style={[styles.glatteis, styles.hitzeTypo]}>Glatteis</Text>
-          <Image
-            style={[styles.iceCube1Icon1, styles.settingsbtnLayout]}
-            contentFit="cover"
-            source={require("../assets/icecube-1.png")}
-          />
-        </View>
-        <View style={[styles.infoPanelswindyPannel, styles.infoShadowBox]}>
-          <View style={[styles.background11, styles.backgroundPosition]} />
-          <Text style={[styles.schwereStrumben, styles.wind1Icon1Position]}>
-            Schwere Strumböen
-          </Text>
-          <Image
-            style={[styles.wind1Icon1, styles.iconPosition]}
-            contentFit="cover"
-            source={require("../assets/wind-1.png")}
-          />
-        </View>
-        <Pressable
-          style={[styles.infoPanelsrainyPannel, styles.infoShadowBox]}
-          onPress={() => navigation.navigate("StormScreen")}
-        >
-          <View style={[styles.background12, styles.backgroundPosition]} />
-          <Text style={[styles.starkregen, styles.starkregenTypo]}>
-            Starkregen
-          </Text>
-          <Image
-            style={[styles.rainy1Icon1, styles.iconPosition]}
-            contentFit="cover"
-            source={require("../assets/rainy-1.png")}
-          />
-        </Pressable>
-        <View style={[styles.infoPanelsveryRainyPannel, styles.infoShadowBox]}>
-          <View style={[styles.background13, styles.backgroundPosition]} />
-          <Text style={[styles.extremStarkerStarkregen1, styles.hitzeTypo]}>
-            Extrem starker Starkregen
-          </Text>
-          <Image
-            style={[styles.wind1Icon1, styles.iconPosition]}
-            contentFit="cover"
-            source={require("../assets/rain-1.png")}
-          />
-        </View>
-        <View
-          style={[
-            styles.headerPannelsofflinePannel,
-            styles.backgroundImageIconPosition,
-          ]}
-        >
-          <Image
-            style={[styles.backgroundImageIcon, styles.iconLayout]}
-            contentFit="cover"
-            source={require("../assets/background-image.png")}
-          />
-          <View style={[styles.blur1, styles.blur1Position]} />
+      <ScrollView style={styles.frame}>
+        <View style={styles.mainScreeenBackground}>
+          <View style={[styles.background7, styles.blur1Position]} />
           <Text
             style={[
-              styles.duBistOfflineContainer,
+              styles.handlungsempfehlungenFrBrg1,
               styles.duBistOfflineContainerFlexBox,
             ]}
           >
-            <Text style={styles.duBistOffline1}>{`Du bist offline!
-`}</Text>
-            <Text style={styles.verbindeDichMit}>
-              Verbinde dich mit dem Internet um auf dem aktuellen Stand zu sein
-            </Text>
+            Handlungsempfehlungen für Bürger:
           </Text>
+          <Pressable
+            style={[styles.infoPanelssunnyPannel, styles.infoShadowBox1]}
+            onPress={() => navigation.navigate("HeatwaveScreen")}
+          >
+            <View style={[styles.background8, styles.backgroundPosition1]} />
+            <Text style={[styles.hitze, styles.hitzeTypo]}> Hitze</Text>
+            <Image
+              style={[styles.heatWave1Icon1, styles.iconLayout]}
+              contentFit="cover"
+              source={require("../assets/heatwave-1.png")}
+            />
+          </Pressable>
+          <View style={[styles.infoPanelsstarkesGewitter, styles.infoShadowBox]}>
+            <View style={[styles.background9, styles.backgroundPosition]} />
+            <Text style={[styles.starkesGewitter, styles.hitzeTypo]}>
+              Starkes Gewitter
+            </Text>
+            <Image
+              style={styles.storm1Icon1}
+              contentFit="cover"
+              source={require("../assets/storm-1.png")}
+            />
+          </View>
+          <View style={[styles.infoPanelsglatteisPannel, styles.infoShadowBox1]}>
+            <View style={[styles.background10, styles.backgroundPosition1]} />
+            <Text style={[styles.glatteis, styles.hitzeTypo]}>Glatteis</Text>
+            <Image
+              style={[styles.iceCube1Icon1]}
+              contentFit="cover"
+              source={require("../assets/icecube-1.png")}
+            />
+          </View>
+          <View style={[styles.infoPanelswindyPannel, styles.infoShadowBox]}>
+            <View style={[styles.background11, styles.backgroundPosition]} />
+            <Text style={[styles.schwereStrumben, styles.wind1Icon1Position]}>
+              Schwere Strumböen
+            </Text>
+            <Image
+              style={[styles.wind1Icon1, styles.iconPosition]}
+              contentFit="cover"
+              source={require("../assets/wind-1.png")}
+            />
+          </View>
+          <Pressable
+            style={[styles.infoPanelsrainyPannel, styles.infoShadowBox]}
+            onPress={() => navigation.navigate("StormScreen")}
+          >
+            <View style={[styles.background12, styles.backgroundPosition]} />
+            <Text style={[styles.starkregen, styles.starkregenTypo]}>
+              Starkregen
+            </Text>
+            <Image
+              style={[styles.rainy1Icon1, styles.iconPosition]}
+              contentFit="cover"
+              source={require("../assets/rainy-1.png")}
+            />
+          </Pressable>
+
+          <View style={[styles.infoPanelsveryRainyPannel, styles.infoShadowBox]}>
+            <View style={[styles.background13, styles.backgroundPosition]} />
+            <Text style={[styles.extremStarkerStarkregen1, styles.hitzeTypo]}>
+              Extrem starker Starkregen
+            </Text>
+            <Image
+              style={[styles.wind1Icon1, styles.iconPosition]}
+              contentFit="cover"
+              source={require("../assets/rain-1.png")}
+            />
+          </View>
+
+
+          <View
+            style={[
+              styles.headerPannelsofflinePannel,
+              styles.backgroundImageIconPosition,
+            ]}
+          >
+            <Image
+              style={[styles.backgroundImageIcon, styles.iconLayout]}
+              contentFit="cover"
+              source={require("../assets/background-image.png")}
+            />
+            <View style={[styles.blur1, styles.blur1Position]} />
+            <Text
+              style={[
+                styles.duBistOfflineContainer,
+                styles.duBistOfflineContainerFlexBox,
+              ]}
+            >
+              <Text style={styles.duBistOffline1}>{`Du bist offline!\n`}</Text>
+              <Text style={styles.verbindeDichMit}>
+                Verbinde dich mit dem Internet um auf dem aktuellen Stand zu sein
+              </Text>
+            </Text>
+          </View>
+
         </View>
-      </View>
+      </ScrollView>
       <Pressable
-        style={[styles.settingsbtn, styles.settingsbtnLayout]}
+        style={[styles.settingsbtnLayout]}
         onPress={() => navigation.navigate("SettingsScreen")}
       >
         <Image
@@ -137,6 +143,11 @@ const MainScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  frame: {
+    backgroundColor: "white",
+    height: "100%",
+    marginBottom: 40,
+  },
   blur1Position: {
     left: "0%",
     right: "0%",
@@ -173,9 +184,9 @@ const styles = StyleSheet.create({
   },
   hitzeTypo: {
     textAlign: "center",
-    fontSize: FontSize.size_2xs,
     color: Color.black,
     fontFamily: FontFamily.inter,
+    fontSize: "20ch",
     position: "absolute",
   },
   iconLayout: {
@@ -208,9 +219,12 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   settingsbtnLayout: {
-    height: 29,
-    width: 29,
+    top: "5%",
+    right: "5%",
+    height: 60,
+    width: 60,
     position: "absolute",
+    zIndex: 4,
   },
   wind1Icon1Position: {
     top: "15.91%",
@@ -226,14 +240,14 @@ const styles = StyleSheet.create({
   starkregenTypo: {
     width: "47.52%",
     textAlign: "center",
-    fontSize: FontSize.size_2xs,
     color: Color.black,
     fontFamily: FontFamily.inter,
-    position: "absolute",
+    fontSize: "20ch",
   },
   backgroundImageIconPosition: {
-    top: "0%",
-    width: "100%",
+    top: "1%",
+    left: "-2%",
+    width: "110%",
   },
   background7: {
     height: "79.74%",
@@ -250,8 +264,8 @@ const styles = StyleSheet.create({
     left: "6.25%",
     textAlign: "left",
     fontFamily: FontFamily.inter,
+    fontSize: "20ch",
     fontWeight: "600",
-    fontSize: FontSize.size_5xs,
   },
   background8: {
     backgroundColor: "#fddbbc",
@@ -262,13 +276,12 @@ const styles = StyleSheet.create({
     width: 42,
     left: "50%",
     marginLeft: -0.5,
-    fontSize: FontSize.size_2xs,
     fontWeight: "600",
   },
   heatWave1Icon1: {
-    height: "58.54%",
-    width: "17.73%",
-    top: "19.51%",
+    height: 60,
+    width: 60,
+    top: "10.51%",
     right: "73.05%",
     bottom: "21.95%",
     left: "9.22%",
@@ -276,6 +289,13 @@ const styles = StyleSheet.create({
   infoPanelssunnyPannel: {
     top: "33.04%",
     bottom: "57.93%",
+    height: 100,
+    zIndex: 5,
+    testPanel:{
+      backgroundColor: "yellow",
+      height: 40,
+      width: 100,
+    },
   },
   background9: {
     backgroundColor: "#bebacf",
@@ -288,10 +308,10 @@ const styles = StyleSheet.create({
     fontWeight: "500",
   },
   storm1Icon1: {
-    top: 8,
-    width: 26,
-    height: 26,
-    left: 13,
+    top: "10%",
+    width: 60,
+    height: 60,
+    left: "10%",
     position: "absolute",
   },
   infoPanelsstarkesGewitter: {
@@ -306,15 +326,16 @@ const styles = StyleSheet.create({
   glatteis: {
     height: "26.83%",
     top: "36.59%",
-    width: 48,
+    width: "30%",
     fontWeight: "500",
     left: "50%",
     marginLeft: -0.5,
-    fontSize: FontSize.size_2xs,
   },
   iceCube1Icon1: {
-    top: 6,
-    left: 13,
+    top: "10%",
+    left: "8%",
+    width: 60,
+    height: 60,
   },
   infoPanelsglatteisPannel: {
     top: "53.96%",
@@ -327,18 +348,19 @@ const styles = StyleSheet.create({
     left: "42.55%",
     width: "47.52%",
     textAlign: "center",
-    fontSize: FontSize.size_2xs,
     color: Color.black,
     fontFamily: FontFamily.inter,
+    fontSize: "20ch",
     position: "absolute",
     fontWeight: "500",
   },
   wind1Icon1: {
-    width: "21.28%",
-    right: "70.92%",
-    left: "7.8%",
-    top: "15.91%",
-    height: "63.64%",
+    height: 60,
+    width: 65,
+    top: "15.51%",
+    right: "73.05%",
+    bottom: "21.95%",
+    left: "9.22%",
   },
   infoPanelswindyPannel: {
     top: "43.17%",
@@ -346,6 +368,7 @@ const styles = StyleSheet.create({
     right: "5.63%",
     height: "9.69%",
     left: "6.25%",
+    marginBottom: 300,
   },
   background12: {
     backgroundColor: "#d1ecff",
@@ -357,8 +380,8 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   rainy1Icon1: {
-    height: "54.55%",
-    width: "19.15%",
+    height: 50,
+    width: 57,
     top: "25%",
     right: "72.34%",
     left: "8.51%",
@@ -404,14 +427,14 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   duBistOffline1: {
-    fontSize: FontSize.size_3xs,
+    fontSize: "20ch",
     fontWeight: "500",
     fontFamily: FontFamily.inter,
   },
   verbindeDichMit: {
     fontWeight: "300",
     fontFamily: FontFamily.inter,
-    fontSize: FontSize.size_5xs,
+    fontSize: "11ch",
   },
   duBistOfflineContainer: {
     height: "15.46%",
@@ -430,17 +453,14 @@ const styles = StyleSheet.create({
   mainScreeenBackground: {
     top: 70,
     left: 0,
-    width: windowWidth,
-    height: windowHeight,
-    position: "absolute",
+    width: "100%",
+    height: 1000,
+    overflowY: "show",
+    marginBottom: "20%",
   },
   icon: {
     height: "100%",
     width: "100%",
-  },
-  settingsbtn: {
-    left: 125,
-    top: 0,
   },
   mainScreen: {
     backgroundColor: Color.darkgray,
