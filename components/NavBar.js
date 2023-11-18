@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     bottom: "-44.74%",
     left: "0%",
     backgroundColor: Color.nabvarBlue,
-    position: "sticky",
+    position: "absolute",
   },
   savemue: {
     top: "31.58%",
