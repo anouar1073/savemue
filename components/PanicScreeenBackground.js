@@ -1,7 +1,14 @@
 import React, { useMemo } from "react";
 import { Image } from "expo-image";
-import { StyleSheet, View, Text, ImageSourcePropType } from "react-native";
+import { StyleSheet, View, Text, ImageSourcePropType, Pressable } from "react-native";
 import { Border, FontSize, Color, FontFamily } from "../GlobalStyles";
+
+import call from 'react-native-phone-call'
+
+const args = {
+  number: '9093900003', // String value with the number to call
+  skipCanOpen: true // Skip the canOpenURL check
+}
 
 const getStyleValue = (key, value) => {
   if (value === undefined) return;
@@ -113,14 +120,17 @@ const PanicScreeenBackground = ({
             backgroundStyle,
           ]}
         />
-        <Text style={[styles.whle110, styles.whleTypo, whle110Style]}>
-          Wähle 110
-        </Text>
+        <Pressable style={[styles.whle110, whle110Style]} onPress={() => call({number: '110', skipCanOpen: true}).catch(console.error)}>
+          <Text style={styles.whleTypo}>
+            Wähle 110
+          </Text>
+        </Pressable>
+ 
         <Image
-          style={[styles.policeman1Icon1, styles.iconPosition]}
-          contentFit="cover"
-          source={require("../assets/policeman-1.png")}
-        />
+            style={[styles.policeman1Icon1, styles.iconPosition]}
+            contentFit="cover"
+            source={require("../assets/policeman-1.png")}
+          />
       </View>
       <View style={[styles.view1, styles.viewPosition, view1Style]}>
         <View
@@ -130,9 +140,11 @@ const PanicScreeenBackground = ({
             background1Style,
           ]}
         />
-        <Text style={[styles.whle112, styles.whleTypo, whle112Style]}>
-          Wähle 112
-        </Text>
+        <Pressable style={[styles.whle112, whle112Style]} onPress={() => call({number: '112', skipCanOpen: true}).catch(console.error)}>
+          <Text style={styles.whleTypo}>
+            Wähle 112
+          </Text>
+        </Pressable>
         <Image
           style={[styles.ambulance1Icon1, styles.iconPosition]}
           contentFit="cover"
@@ -248,7 +260,7 @@ const styles = StyleSheet.create({
     bottom: "30.56%",
   },
   panicScreeenBackground: {
-    width: 160,
+    width: "100%",
     height: 324,
   },
 });
