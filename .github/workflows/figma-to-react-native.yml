@@ -1,0 +1,61 @@
+name: figma-to-react-native
+
+on:
+  workflow_dispatch:
+    inputs:
+      branch:
+        description: 'What branch?'
+        required: false
+        default: 'design'
+      tokens:
+        description: 'Design Tokens'
+        required: true
+        default: 'Updated Design Tokens from Figma'
+      theme:
+        description: 'Restyle Theme'
+        required: false
+        default: 'Updated Restyle Theme from Figma'
+  push:
+    branches:
+      - "design"
+
+jobs:
+  build-unix:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: ["ubuntu-latest"]
+        node-version: [14.x]
+    steps:
+      - name: Inputs
+        id: input-messages
+        run: |
+          echo "BRANCH ---> '${{ github.event.inputs.branch }}'"
+          echo "TOKENS ---> '${{ github.event.inputs.tokens }}'"
+          echo "THEME ---> '${{ github.event.inputs.theme }}'"
+      - name: Checkout
+        id: checkout
+        uses: actions/checkout@v2
+
+      - name: Create Directory "figma"
+        run: 'mkdir -p src/ui/figma'
+
+      - name: Create JSON from request body
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: 'tokens.json'
+          # it uses the json string that was send as the tokens parameter
+          json: ${{ github.event.inputs.tokens }}
+          # it uses the directory named "tokens" to store this json file (change this if you changed it above to use a different folder)
+          dir: 'src/ui/figma'
+
+      - name: Create Typescript Theme File from request body
+        run: |
+          printf "${{ github.event.inputs.theme }}" > src/ui/figma/restyleTheme.ts
+      # We now store the changes in the repository
+      - name: Persist changes in repository
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ github.event.inputs.branch }}
