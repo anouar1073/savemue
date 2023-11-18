@@ -34,12 +34,12 @@ const styles = StyleSheet.create({
     bottom: "-44.74%",
     left: "0%",
     backgroundColor: Color.nabvarBlue,
-    position: "sticky",
   },
   savemue: {
     top: "31.58%",
-    left: "8.75%",
-    fontSize: FontSize.size_3xs,
+    left: "5%",
+    marginTop: "6%",
+    fontSize: "30ch",
     fontWeight: "700",
     fontFamily: FontFamily.inter,
     color: Color.white,
@@ -48,7 +48,8 @@ const styles = StyleSheet.create({
   },
   navbar: {
     width: windowWidth,
-    height: 70,
+    height: "8%",
+    zIndex: 3,
   },
 });
 

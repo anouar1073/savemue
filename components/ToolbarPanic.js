@@ -1,80 +1,58 @@
-import React, { useMemo } from "react";
-import { StyleSheet, View, Text, Pressable } from "react-native";
+import * as React from "react";
 import { Image } from "expo-image";
-import { Color, Border, FontSize, FontFamily } from "../GlobalStyles";
+import { Pressable, StyleSheet, View, Text } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-const getStyleValue = (key, value) => {
-  if (value === undefined) return;
-  return { [key]: value === "unset" ? undefined : value };
-};
-const ToolbarPanic = ({
-  toolbarPanicPosition,
-  toolbarPanicTop,
-  toolbarPanicLeft,
-  onQuitBtnPress,
-}) => {
-  const toolbarPanicStyle = useMemo(() => {
-    return {
-      ...getStyleValue("position", toolbarPanicPosition),
-      ...getStyleValue("top", toolbarPanicTop),
-      ...getStyleValue("left", toolbarPanicLeft),
-    };
-  }, [toolbarPanicPosition, toolbarPanicTop, toolbarPanicLeft]);
+import { windowWidth } from "../tools/window_size";
 
+const ToolbarPanic = () => {
+  const navigation = useNavigation();
   return (
-    <View style={[styles.toolbarpanic, toolbarPanicStyle]}>
-      <View style={[styles.toolbarpanicChild, styles.childPosition]} />
-      <Pressable style={styles.quitBtn} onPress={onQuitBtnPress}>
-        <Image
-          style={[styles.quitBtnChild, styles.childPosition]}
-          contentFit="cover"
-          source={require("../assets/rectangle-1.png")}
-        />
-        <Text style={styles.quit}>Quit</Text>
+    <View style={styles.body}>
+      <Pressable style={styles.btn} onPress={() => navigation.navigate("PanicScreen")}>
+      <Text style={styles.btnTxt}>Back</Text>
       </Pressable>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  childPosition: {
-    left: "0%",
-    bottom: "0%",
-    right: "0%",
-    top: "0%",
-    width: "100%",
+  body: {
+    bottom: 0,
+    left: 0,
+    width: "20%",
+    height: "60%",
+    alignSelf: "center",
+    margin: "auto",
+    borderRadius: 10,
+    backgroundColor: "red",
+  },
+  toolbarpanicIcon: {
+    top: "20%",
+    left: 0,
+    width: "20%",
+    height: "60%",
+    alignSelf: "center",
+    margin: "auto",
+    borderRadius: 10,
+  },
+  btn: {
+    position: "absolute",
+    width: "30%",
     height: "100%",
+    alignSelf: "center",
+    opacity: 0,
+    zIndex: 3,
+  },
+  btnTxt: {
+    fontSize: "20ch",
+    fontWeight: 700,
     position: "absolute",
-  },
-  toolbarpanicChild: {
-    backgroundColor: Color.white,
-  },
-  quitBtnChild: {
-    borderRadius: Border.br_2xs,
-    maxWidth: "100%",
-    overflow: "hidden",
-    maxHeight: "100%",
-  },
-  quit: {
-    top: "19.35%",
-    left: "27.78%",
-    fontSize: FontSize.size_5xs,
-    fontFamily: FontFamily.inter,
-    color: Color.white,
-    textAlign: "left",
-    position: "absolute",
-  },
-  quitBtn: {
-    top: 7,
-    left: 61,
-    width: 36,
-    height: 16,
-    position: "absolute",
-  },
-  toolbarpanic: {
-    width: 159,
-    height: 31,
-  },
+    top: "30%",
+    left: "45%",
+    alignSelf: "center",
+    margin: "auto",
+  }
 });
 
 export default ToolbarPanic;

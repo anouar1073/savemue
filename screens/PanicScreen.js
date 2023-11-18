@@ -13,17 +13,17 @@ const PanicScreen = () => {
   return (
     <View style={styles.panicScreen}>
       <ToolbarPanic
-        toolbarPanicPosition="absolute"
-        toolbarPanicTop={293}
-        toolbarPanicLeft={0}
         onQuitBtnPress={() => navigation.navigate("MainScreen")}
+        style={styles.toolBar}
       />
-      <View style={styles.frame}>
-        <NavBar
-          navBarPosition="relative"
-          navBarTop="unset"
-          navBarLeft="unset"
+      <NavBar
+          navBarPosition="absolute"
+          navBarTop="0%"
+          navBarLeft="0%"
+          style={styles.navbar}
         />
+
+      <View style={styles.frame}>
         <PanicScreeenBackground
           imageDimensions={require("../assets/background1.png")}
           panicScreeenBackgroundHeight={340}
@@ -50,6 +50,10 @@ const PanicScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  navbar: {
+    width: "100%",
+    height: 60,
+  },
   frame: {
     position: "absolute",
     top: 0,
