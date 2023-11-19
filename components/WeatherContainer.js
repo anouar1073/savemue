@@ -3,6 +3,7 @@ import { Image } from "expo-image";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
+import { windowWidth } from "../tools/window_size";
 
 const WeatherContainer = () => {
   const navigation = useNavigation();
@@ -36,7 +37,8 @@ const WeatherContainer = () => {
 
 const styles = StyleSheet.create({
   topPosition: {
-    height: 132,
+    width: windowWidth,
+    height: 300,
     top: 0,
     position: "absolute",
   },
@@ -58,8 +60,8 @@ const styles = StyleSheet.create({
   },
   backgroundImageIcon: {
     left: 1,
-    width: 159,
-    height: 132,
+    width: "100%",
+    height: "100%",
     top: 0,
   },
   blur1: {
@@ -89,7 +91,7 @@ const styles = StyleSheet.create({
   headerPannelsheatWavePanne: {
     width: 160,
     left: 0,
-    height: 132,
+    height: "100%",
     top: 0,
   },
   backChild: {
@@ -120,15 +122,15 @@ const styles = StyleSheet.create({
     top: 8,
     left: 8,
     borderRadius: Border.br_12xs,
-    width: 27,
-    height: 26,
+    width: 60,
+    height: 60,
     position: "absolute",
   },
   top: {
     overflow: "hidden",
-    width: 160,
+    width: windowWidth,
     left: 0,
-    height: 132,
+    height: "100%",
     top: 0,
   },
 });

@@ -7,7 +7,7 @@ export const FontSize = {
   size_7xs: 6,
   size_5xs: 8,
   size_3xs: 10,
-  size_2xs: 11,
+  size_2xs: 20,
   size_sm: 14,
   size_6xs: 7,
 };

@@ -4,6 +4,7 @@ import { Image } from "expo-image";
 import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { FontSize, FontFamily, Color, Border } from "../GlobalStyles";
+import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 
 const MapScreen = () => {
   const navigation = useNavigation();
@@ -11,27 +12,21 @@ const MapScreen = () => {
   return (
     <View style={styles.mapScreen}>
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
-      <Image
-        style={styles.settingsbtnIcon1}
-        contentFit="cover"
-        source={require("../assets/settingsbtn.png")}
-      />
-      <View style={[styles.mapScreenBackground1, styles.unionIconLayout]}>
-        <Image
-          style={styles.unionIconLayout}
-          contentFit="cover"
-          source={require("../assets/union.png")}
-        />
-        <View style={styles.backbtn}>
+
+      
+      <View style={styles.backbtn}>
           <View style={styles.backbtnChild} />
           <Pressable
             style={styles.back}
             onPress={() => navigation.navigate("HeatwaveScreen")}
           >
-            <Text style={styles.back1}>Back</Text>
+          <Image
+          style={styles.previousIcon}
+          source={require("../assets/previous.png")}
+        />
           </Pressable>
-        </View>
       </View>
+      
       <View style={[styles.fountain1Parent, styles.fountain1ParentPosition]}>
         <Image
           style={styles.fountain1Icon1}
@@ -42,39 +37,65 @@ const MapScreen = () => {
           Öffentliches Trinkwasser in Ihrer Nähe
         </Text>
       </View>
-      <Image
-        style={styles.toolbardefaultIcon}
-        contentFit="cover"
-        source={require("../assets/toolbardefault.png")}
-      />
+
+      <View style={[styles.mapScreenBackground1, styles.unionIconLayout]}>
+        <Image
+          style={styles.unionIconLayout}
+          contentFit="cover"
+          source={require("../assets/union.png")}
+        />
+      </View>
+
+      <Pressable
+        style={[styles.settingsbtnLayout]}
+        onPress={() => navigation.navigate("SettingsScreen")}
+      >
+        <Image
+          style={styles.icon}
+          contentFit="cover"
+          source={require("../assets/settingsbtn.png")}
+        />
+      </Pressable>
+      <ToolbarDefaultIcon />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   unionIconLayout: {
-    height: 322,
-    width: 160,
+    height: 400,
+    width: "100%",
+  },
+  previousIcon: {
+    width: 40,
+    height: 40,
+    contentFit: "cover",
+    position: "absolute",
+    top: 115,
+    left: 17,
+  },
+  settingsbtnLayout: {
+    top: "5%",
+    right: "5%",
+    height: 60,
+    width: 60,
+    position: "absolute",
+    zIndex: 4,
+  },
+  icon: {
+    height: "100%",
+    width: "100%",
   },
   fountain1ParentPosition: {
     left: 0,
     position: "absolute",
   },
-  settingsbtnIcon1: {
-    top: 1,
-    left: 124,
-    width: 29,
-    height: 29,
-    position: "absolute",
-  },
   backbtnChild: {
     height: "100%",
-    top: "0%",
-    right: "0%",
-    bottom: "0%",
-    left: "0%",
-    borderRadius: 104,
-    backgroundColor: "rgba(255, 255, 255, 0.7)",
+    top: "200%",
+    left: "40%",
+    borderRadius: 10,
+    backgroundColor: "white",
     position: "absolute",
     width: "100%",
   },
@@ -91,44 +112,40 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   backbtn: {
-    height: "5.4%",
-    width: "20.63%",
-    top: "2.86%",
-    right: "73.13%",
-    bottom: "91.74%",
-    left: "6.25%",
+    height: 60,
+    width: 60,
     position: "absolute",
+    zIndex: 4,
   },
   mapScreenBackground1: {
-    top: 29,
+    top: "50%",
     left: 0,
-    position: "absolute",
   },
   fountain1Icon1: {
-    top: 3,
-    left: 7,
-    width: 24,
-    height: 24,
+    top: "40%",
+    left: "40%",
+    width: 70,
+    height: 70,
     position: "absolute",
   },
   ffentlichesTrinkwasserIn1: {
-    top: 6,
+    top: "20%",
     left: 39,
-    fontSize: FontSize.size_5xs,
+    fontSize: FontSize.size_2xs,
     fontWeight: "600",
     color: Color.black,
     textAlign: "center",
-    width: 98,
-    height: 21,
+    width: "80%",
+    height: "20%",
     fontFamily: FontFamily.inter,
     position: "absolute",
   },
   fountain1Parent: {
-    top: 265,
+    top: 100,
     borderRadius: Border.br_2xs,
     backgroundColor: Color.white,
-    width: 159,
-    height: 40,
+    width: "100%",
+    height: "50%",
     overflow: "hidden",
   },
   toolbardefaultIcon: {
