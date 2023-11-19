@@ -1,0 +1,19 @@
+{
+  "detectedConfig": {
+    "typescript": false,
+    "naming": "Kebab Case",
+    "unit": "em",
+    "framework": "react",
+    "styling": "CSS Modules"
+  },
+  "locofyConfig": {
+    "project_name": "SaveMue",
+    "id": "6558df66d8a69a68b64e8aad",
+    "framework": "react-native",
+    "typescript": false,
+    "path": "assets/",
+    "componentsPath": "c:\\Users\\inesa\\OneDrive\\Documentos\\TUM\\HackaTUM\\savemue\\src\\components",
+    "screensPath": "c:\\Users\\inesa\\OneDrive\\Documentos\\TUM\\HackaTUM\\savemue\\src\\pages",
+    "project_environment": "expo_go"
+  }
+}
