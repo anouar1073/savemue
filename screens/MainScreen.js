@@ -5,20 +5,19 @@ import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 import { Border, FontSize, Color, FontFamily } from "../GlobalStyles";
-import {Dimensions} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import { Dimensions } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 import settingsButtonStyles from "../style/settings_button";
 
-export const windowWidth = Dimensions.get('window').width;
-export const windowHeight = Dimensions.get('window').height;
-
+export const windowWidth = Dimensions.get("window").width;
+export const windowHeight = Dimensions.get("window").height;
 
 const MainScreen = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.mainScreen}>
-      <NavBar style={styles.navBar} navBarPosition="absolute" navBarTop={0}/>
+      <NavBar style={styles.navBar} navBarPosition="absolute" navBarTop={0} />
       <ScrollView style={styles.frame}>
         <View style={styles.mainScreeenBackground}>
           <View style={[styles.background7, styles.blur1Position]} />
@@ -42,7 +41,9 @@ const MainScreen = () => {
               source={require("../assets/heatwave-1.png")}
             />
           </Pressable>
-          <View style={[styles.infoPanelsstarkesGewitter, styles.infoShadowBox]}>
+          <View
+            style={[styles.infoPanelsstarkesGewitter, styles.infoShadowBox]}
+          >
             <View style={[styles.background9, styles.backgroundPosition]} />
             <Text style={[styles.starkesGewitter, styles.hitzeTypo]}>
               Starkes Gewitter
@@ -53,9 +54,13 @@ const MainScreen = () => {
               source={require("../assets/storm-1.png")}
             />
           </View>
-          <View style={[styles.infoPanelsglatteisPannel, styles.infoShadowBox1]}>
+          <View
+            style={[styles.infoPanelsglatteisPannel, styles.infoShadowBox1]}
+          >
             <View style={[styles.background10, styles.backgroundPosition1]} />
-            <Text style={[styles.starkesGewitter, styles.hitzeTypo]}>Glatteis</Text>
+            <Text style={[styles.starkesGewitter, styles.hitzeTypo]}>
+              Glatteis
+            </Text>
             <Image
               style={[styles.iceCube1Icon1]}
               contentFit="cover"
@@ -88,7 +93,9 @@ const MainScreen = () => {
             />
           </Pressable>
 
-          <View style={[styles.infoPanelsveryRainyPannel, styles.infoShadowBox]}>
+          <View
+            style={[styles.infoPanelsveryRainyPannel, styles.infoShadowBox]}
+          >
             <View style={[styles.background13, styles.backgroundPosition]} />
             <Text style={[styles.extremStarkerStarkregen1, styles.hitzeTypo]}>
               Extrem starker Starkregen
@@ -99,7 +106,6 @@ const MainScreen = () => {
               source={require("../assets/rain-1.png")}
             />
           </View>
-
 
           <View
             style={[
@@ -121,11 +127,11 @@ const MainScreen = () => {
             >
               <Text style={styles.duBistOffline1}>{`Du bist offline!\n`}</Text>
               <Text style={styles.verbindeDichMit}>
-                Verbinde dich mit dem Internet um auf dem aktuellen Stand zu sein
+                Verbinde dich mit dem Internet um auf dem aktuellen Stand zu
+                sein
               </Text>
             </Text>
           </View>
-
         </View>
       </ScrollView>
       <Pressable
@@ -250,7 +256,7 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   handlungsempfehlungenFrBrg1: {
-    height: "3.96%",
+    height: "8%",
     width: "90.63%",
     top: "29.07%",
     color: Color.black,
@@ -284,7 +290,7 @@ const styles = StyleSheet.create({
     bottom: "57.93%",
     height: 100,
     zIndex: 5,
-    testPanel:{
+    testPanel: {
       backgroundColor: "yellow",
       height: 40,
       width: 100,
@@ -456,12 +462,11 @@ const styles = StyleSheet.create({
     flex: 1,
     height: windowHeight,
     width: windowWidth,
-    overflowY: "scroll"
+    overflowY: "scroll",
   },
   navBar: {
     width: windowWidth,
   },
-  
 });
 
 export default MainScreen;
