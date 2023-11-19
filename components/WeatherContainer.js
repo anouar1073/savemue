@@ -4,6 +4,7 @@ import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import { Color, Border, FontFamily, FontSize } from "../GlobalStyles";
 import { windowWidth } from "../tools/window_size";
+import BackButton from "./BackButton";
 
 const WeatherContainer = () => {
   const navigation = useNavigation();
@@ -23,14 +24,8 @@ const WeatherContainer = () => {
           <Text style={styles.hitzewelle}>Hitzewelle</Text>
         </Text>
       </View>
-      <Pressable
-        style={styles.back}
-        onPress={() => navigation.navigate("MainScreen")}
-      >
-        <View style={[styles.backChild, styles.blur1Position]} />
-        <View style={[styles.backItem, styles.backTransform]} />
-        <View style={[styles.backInner, styles.backTransform]} />
-      </Pressable>
+
+      <BackButton />
     </View>
   );
 };
@@ -51,12 +46,26 @@ const styles = StyleSheet.create({
   backTransform: {
     transform: [
       {
-        rotate: "-45deg",
+        rotate: "-55deg",
       },
     ],
     backgroundColor: Color.nabvarBlue,
     borderRadius: Border.br_7xs,
     position: "absolute",
+    left: "45%",
+    top: "41%"
+  },
+  backTransform2: {
+    transform: [
+      {
+        rotate: "55deg",
+      },
+    ],
+    backgroundColor: Color.nabvarBlue,
+    borderRadius: Border.br_7xs,
+    position: "absolute",
+    left: "45%",
+    bottom: "42%"
   },
   backgroundImageIcon: {
     left: 1,

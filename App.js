@@ -5,7 +5,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import MainScreen from "./screens/MainScreen";
 import DropDownButton from "./components/DropDownButton";
 import ToolbarPanic from "./components/ToolbarPanic";
-import PanicScreeenBackground from "./components/PanicScreeenBackground";
+import PanicScreenBackground from "./components/PanicScreeenBackground";
 import NavBar from "./components/NavBar";
 import PanicScreen from "./screens/PanicScreen";
 import SettingsScreen from "./screens/SettingsScreen";

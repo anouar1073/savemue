@@ -19,7 +19,7 @@ const HeatwaveScreen = () => {
   return (
     <View style={styles.heatwaveScreen}>
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
-      <ScrollView></ScrollView>
+
       <View style={styles.component2}>
         <WeatherContainer style={styles.WeatherContainer} />
         <View style={[styles.background1, styles.background1Position]} />

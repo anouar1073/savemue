@@ -4,6 +4,8 @@ import { Image } from "expo-image";
 import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, Border, FontSize } from "../GlobalStyles";
+import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
+import settingsButtonStyles from "../style/settings_button";
 
 const StormScreen = () => {
   const navigation = useNavigation();
@@ -11,16 +13,27 @@ const StormScreen = () => {
   return (
     <View style={styles.stormScreen}>
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
-      <Image
-        style={styles.settingsbtnIcon1}
-        contentFit="cover"
-        source={require("../assets/settingsbtn.png")}
-      />
+
+      <View style={styles.backbtn}>
+          <View style={styles.backbtnChild} />
+          <Pressable
+            style={styles.back}
+            onPress={() => navigation.navigate("MainScreen")}
+          >
+          <Image
+          style={styles.previousIcon}
+          source={require("../assets/previous.png")}
+        />
+          </Pressable>
+      </View>
+      
       <View style={styles.stormBackground}>
         <View style={[styles.background1, styles.blur1Position]} />
         <Text
           style={[styles.beiUnwohlseinNach1, styles.beiUnwohlseinNach1FlexBox]}
-        >{`Bei Unwohlsein nach längerer Hitze- und Sonnenstrahlenbelastung suchen Sie einen Arzt oder eine Ärztin auf oder rufen Sie sofort die Notrufnummer 112 an. `}</Text>
+        >{`Bei Unwohlsein nach längerer Hitze- und Sonnenstrahlenbelastung suchen Sie einen Arzt oder eine Ärztin auf oder rufen Sie sofort die Notrufnummer 112 an. `}
+        </Text>
+
         <View style={styles.headerPannelsstormPannel}>
           <Image
             style={[styles.backgroundImageIcon, styles.backChildPosition]}
@@ -41,20 +54,19 @@ const StormScreen = () => {
             <Text style={styles.sturm}>Sturm</Text>
           </Text>
         </View>
-        <Pressable
-          style={styles.back}
-          onPress={() => navigation.navigate("MainScreen")}
-        >
-          <View style={[styles.backChild, styles.backChildPosition]} />
-          <View style={[styles.backItem, styles.backTransform]} />
-          <View style={[styles.backInner, styles.backTransform]} />
-        </Pressable>
       </View>
-      <Image
-        style={styles.toolbardefaultIcon}
-        contentFit="cover"
-        source={require("../assets/toolbardefault1.png")}
-      />
+      
+      <Pressable
+        style={[settingsButtonStyles.settingsbtnLayout]}
+        onPress={() => navigation.navigate("SettingsScreen")}
+      >
+        <Image
+          style={settingsButtonStyles.icon}
+          contentFit="cover"
+          source={require("../assets/settingsbtn.png")}
+        />
+      </Pressable>
+      <ToolbarDefaultIcon />
     </View>
   );
 };
@@ -146,8 +158,8 @@ const styles = StyleSheet.create({
     fontSize: FontSize.size_3xs,
   },
   headerPannelsstormPannel: {
-    height: "19.16%",
-    width: "99.38%",
+    height: "40%",
+    width: "100%",
     bottom: "80.84%",
     left: "0.63%",
     top: "0%",
@@ -187,9 +199,9 @@ const styles = StyleSheet.create({
   },
   stormBackground: {
     top: 38,
-    left: -1,
-    width: 160,
-    height: 689,
+    left: -10,
+    width: "110%",
+    height: "100%",
     position: "absolute",
   },
   toolbardefaultIcon: {
@@ -204,6 +216,34 @@ const styles = StyleSheet.create({
     flex: 1,
     height: 324,
     width: "100%",
+  },
+  backbtnChild: {
+    height: "100%",
+    top: "200%",
+    left: "40%",
+    borderRadius: 10,
+    backgroundColor: "white",
+    position: "absolute",
+    width: "100%",
+  },
+  backbtn: {
+    height: 60,
+    width: 60,
+    position: "absolute",
+    zIndex: 4,
+  },
+  back: {
+    left: "24.24%",
+    top: "23.56%",
+    position: "absolute",
+  },
+  previousIcon: {
+    width: 40,
+    height: 40,
+    contentFit: "cover",
+    position: "absolute",
+    top: 115,
+    left: 17,
   },
 });
 
