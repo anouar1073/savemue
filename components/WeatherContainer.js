@@ -29,7 +29,7 @@ const WeatherContainer = () => {
       >
         <View style={[styles.backChild, styles.blur1Position]} />
         <View style={[styles.backItem, styles.backTransform]} />
-        <View style={[styles.backInner, styles.backTransform]} />
+        <View style={[styles.backInner, styles.backTransform2]} />
       </Pressable>
     </View>
   );
@@ -51,12 +51,26 @@ const styles = StyleSheet.create({
   backTransform: {
     transform: [
       {
-        rotate: "-45deg",
+        rotate: "-55deg",
       },
     ],
     backgroundColor: Color.nabvarBlue,
     borderRadius: Border.br_7xs,
     position: "absolute",
+    left: "45%",
+    top: "41%"
+  },
+  backTransform2: {
+    transform: [
+      {
+        rotate: "55deg",
+      },
+    ],
+    backgroundColor: Color.nabvarBlue,
+    borderRadius: Border.br_7xs,
+    position: "absolute",
+    left: "45%",
+    bottom: "42%"
   },
   backgroundImageIcon: {
     left: 1,
