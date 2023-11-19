@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, Border, FontSize } from "../GlobalStyles";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
+import settingsButtonStyles from "../style/settings_button";
 
 const SettingsScreen = () => {
   const navigation = useNavigation();
@@ -32,11 +33,11 @@ const SettingsScreen = () => {
       </View>
 
       <Pressable
-        style={[styles.settingsbtnLayout]}
+        style={[settingsButtonStyles.settingsbtnLayout]}
         onPress={() => navigation.navigate("MainScreen")}
       >
         <Image
-          style={styles.icon}
+          style={settingsButtonStyles.icon}
           contentFit="cover"
           source={require("../assets/settingsbtn.png")}
         />
@@ -120,18 +121,6 @@ const styles = StyleSheet.create({
     backgroundColor: Color.darkgray,
     flex: 1,
     height: 324,
-    width: "100%",
-  },
-  settingsbtnLayout: {
-    top: "5%",
-    right: "5%",
-    height: 60,
-    width: 60,
-    position: "absolute",
-    zIndex: 4,
-  },
-  icon: {
-    height: "100%",
     width: "100%",
   },
 });

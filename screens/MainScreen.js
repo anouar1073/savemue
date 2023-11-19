@@ -7,6 +7,7 @@ import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 import { Border, FontSize, Color, FontFamily } from "../GlobalStyles";
 import {Dimensions} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import settingsButtonStyles from "../style/settings_button";
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -128,11 +129,11 @@ const MainScreen = () => {
         </View>
       </ScrollView>
       <Pressable
-        style={[styles.settingsbtnLayout]}
+        style={[settingsButtonStyles.settingsbtnLayout]}
         onPress={() => navigation.navigate("SettingsScreen")}
       >
         <Image
-          style={styles.icon}
+          style={settingsButtonStyles.icon}
           contentFit="cover"
           source={require("../assets/settingsbtn.png")}
         />
@@ -217,14 +218,6 @@ const styles = StyleSheet.create({
     right: "0%",
     position: "absolute",
     width: "100%",
-  },
-  settingsbtnLayout: {
-    top: "5%",
-    right: "5%",
-    height: 60,
-    width: 60,
-    position: "absolute",
-    zIndex: 4,
   },
   wind1Icon1Position: {
     top: "15.91%",
@@ -458,10 +451,6 @@ const styles = StyleSheet.create({
     overflowY: "show",
     marginBottom: "20%",
   },
-  icon: {
-    height: "100%",
-    width: "100%",
-  },
   mainScreen: {
     backgroundColor: Color.darkgray,
     flex: 1,
@@ -472,6 +461,7 @@ const styles = StyleSheet.create({
   navBar: {
     width: windowWidth,
   },
+  
 });
 
 export default MainScreen;

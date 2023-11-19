@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { FontSize, FontFamily, Color, Border } from "../GlobalStyles";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
+import settingsButtonStyles from "../style/settings_button";
 
 const MapScreen = () => {
   const navigation = useNavigation();
@@ -47,11 +48,11 @@ const MapScreen = () => {
       </View>
 
       <Pressable
-        style={[styles.settingsbtnLayout]}
+        style={settingsButtonStyles.settingsbtnLayout}
         onPress={() => navigation.navigate("SettingsScreen")}
       >
         <Image
-          style={styles.icon}
+          style={settingsButtonStyles.icon}
           contentFit="cover"
           source={require("../assets/settingsbtn.png")}
         />
@@ -73,18 +74,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 115,
     left: 17,
-  },
-  settingsbtnLayout: {
-    top: "5%",
-    right: "5%",
-    height: 60,
-    width: 60,
-    position: "absolute",
-    zIndex: 4,
-  },
-  icon: {
-    height: "100%",
-    width: "100%",
   },
   fountain1ParentPosition: {
     left: 0,
