@@ -10,23 +10,20 @@ import { Dimensions } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 
-export const windowWidth = Dimensions.get('window').width;
-export const windowHeight = Dimensions.get('window').height;
+export const windowWidth = Dimensions.get("window").width;
+export const windowHeight = Dimensions.get("window").height;
 
 const HeatwaveScreen = () => {
   const navigation = useNavigation();
 
   return (
     <View style={styles.heatwaveScreen}>
-      
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
-      <ScrollView>
-
-      </ScrollView>
-        <View style={styles.component2}>
-          <WeatherContainer style={styles.WeatherContainer}/>
-          <View style={[styles.background1, styles.background1Position]} />
-          <View style={styles.component3}>
+      <ScrollView></ScrollView>
+      <View style={styles.component2}>
+        <WeatherContainer style={styles.WeatherContainer} />
+        <View style={[styles.background1, styles.background1Position]} />
+        <View style={styles.component3}>
           <View style={[styles.vectorParent, styles.frameChildPosition]}>
             <Image
               style={[styles.dropDownWarningFrame, styles.frameLayout]}
@@ -77,7 +74,7 @@ const HeatwaveScreen = () => {
             Auf der Karte
           </Text>
         </Pressable>
-        </View>
+      </View>
       <Pressable
         style={[styles.settingsbtnLayout]}
         onPress={() => navigation.navigate("SettingsScreen")}
@@ -235,7 +232,7 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     position: "absolute",
-    zIndex: 4, 
+    zIndex: 4,
   },
   toolbardefaultIcon: {
     top: "90%",
@@ -246,7 +243,7 @@ const styles = StyleSheet.create({
     flex: 1,
     height: windowHeight,
     width: windowWidth,
-    overflowY: "scroll"
+    overflowY: "scroll",
   },
 });
 

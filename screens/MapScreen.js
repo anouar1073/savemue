@@ -5,6 +5,7 @@ import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { FontSize, FontFamily, Color, Border } from "../GlobalStyles";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
+import Map from "../Map";
 
 const MapScreen = () => {
   const navigation = useNavigation();
@@ -13,20 +14,19 @@ const MapScreen = () => {
     <View style={styles.mapScreen}>
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
 
-      
       <View style={styles.backbtn}>
-          <View style={styles.backbtnChild} />
-          <Pressable
-            style={styles.back}
-            onPress={() => navigation.navigate("HeatwaveScreen")}
-          >
+        <View style={styles.backbtnChild} />
+        <Pressable
+          style={styles.back}
+          onPress={() => navigation.navigate("HeatwaveScreen")}
+        >
           <Image
-          style={styles.previousIcon}
-          source={require("../assets/previous.png")}
-        />
-          </Pressable>
+            style={styles.previousIcon}
+            source={require("../assets/previous.png")}
+          />
+        </Pressable>
       </View>
-      
+
       <View style={[styles.fountain1Parent, styles.fountain1ParentPosition]}>
         <Image
           style={styles.fountain1Icon1}
@@ -39,11 +39,7 @@ const MapScreen = () => {
       </View>
 
       <View style={[styles.mapScreenBackground1, styles.unionIconLayout]}>
-        <Image
-          style={styles.unionIconLayout}
-          contentFit="cover"
-          source={require("../assets/union.png")}
-        />
+        <Map emergencyType={1}></Map>
       </View>
 
       <Pressable
