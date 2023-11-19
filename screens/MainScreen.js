@@ -7,6 +7,7 @@ import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 import { Border, FontSize, Color, FontFamily } from "../GlobalStyles";
 import {Dimensions} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
+import settingsButtonStyles from "../style/settings_button";
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -54,7 +55,7 @@ const MainScreen = () => {
           </View>
           <View style={[styles.infoPanelsglatteisPannel, styles.infoShadowBox1]}>
             <View style={[styles.background10, styles.backgroundPosition1]} />
-            <Text style={[styles.glatteis, styles.hitzeTypo]}>Glatteis</Text>
+            <Text style={[styles.starkesGewitter, styles.hitzeTypo]}>Glatteis</Text>
             <Image
               style={[styles.iceCube1Icon1]}
               contentFit="cover"
@@ -128,11 +129,11 @@ const MainScreen = () => {
         </View>
       </ScrollView>
       <Pressable
-        style={[styles.settingsbtnLayout]}
+        style={[settingsButtonStyles.settingsbtnLayout]}
         onPress={() => navigation.navigate("SettingsScreen")}
       >
         <Image
-          style={styles.icon}
+          style={settingsButtonStyles.icon}
           contentFit="cover"
           source={require("../assets/settingsbtn.png")}
         />
@@ -218,14 +219,6 @@ const styles = StyleSheet.create({
     position: "absolute",
     width: "100%",
   },
-  settingsbtnLayout: {
-    top: "5%",
-    right: "5%",
-    height: 60,
-    width: 60,
-    position: "absolute",
-    zIndex: 4,
-  },
   wind1Icon1Position: {
     top: "15.91%",
     height: "63.64%",
@@ -271,9 +264,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#fddbbc",
   },
   hitze: {
-    height: "31.71%",
+    height: "40.71%",
     top: "34.15%",
-    width: 42,
+    width: "30%",
     left: "50%",
     marginLeft: -0.5,
     fontWeight: "600",
@@ -287,7 +280,7 @@ const styles = StyleSheet.create({
     left: "9.22%",
   },
   infoPanelssunnyPannel: {
-    top: "33.04%",
+    top: "35.04%",
     bottom: "57.93%",
     height: 100,
     zIndex: 5,
@@ -301,10 +294,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#bebacf",
   },
   starkesGewitter: {
-    height: "61.36%",
-    width: "39.01%",
-    top: "18.18%",
-    left: "46.1%",
+    height: "70%",
+    width: "50%",
+    top: "40%",
+    left: "40%",
     fontWeight: "500",
   },
   storm1Icon1: {
@@ -315,7 +308,7 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   infoPanelsstarkesGewitter: {
-    top: "85.68%",
+    top: "87.68%",
     right: "6.25%",
     bottom: "4.63%",
     left: "5.63%",
@@ -338,7 +331,7 @@ const styles = StyleSheet.create({
     height: 60,
   },
   infoPanelsglatteisPannel: {
-    top: "53.96%",
+    top: "55.96%",
     bottom: "37%",
   },
   background11: {
@@ -363,7 +356,7 @@ const styles = StyleSheet.create({
     left: "9.22%",
   },
   infoPanelswindyPannel: {
-    top: "43.17%",
+    top: "45.17%",
     bottom: "47.14%",
     right: "5.63%",
     height: "9.69%",
@@ -387,7 +380,7 @@ const styles = StyleSheet.create({
     left: "8.51%",
   },
   infoPanelsrainyPannel: {
-    top: "64.1%",
+    top: "66.1%",
     bottom: "26.21%",
     right: "5.63%",
     height: "9.69%",
@@ -399,12 +392,12 @@ const styles = StyleSheet.create({
   extremStarkerStarkregen1: {
     height: "47.73%",
     width: "58.16%",
-    top: "22.73%",
+    top: "35%",
     left: "36.17%",
     fontWeight: "500",
   },
   infoPanelsveryRainyPannel: {
-    top: "74.89%",
+    top: "76.89%",
     bottom: "15.42%",
     right: "5.63%",
     height: "9.69%",
@@ -458,10 +451,6 @@ const styles = StyleSheet.create({
     overflowY: "show",
     marginBottom: "20%",
   },
-  icon: {
-    height: "100%",
-    width: "100%",
-  },
   mainScreen: {
     backgroundColor: Color.darkgray,
     flex: 1,
@@ -472,6 +461,7 @@ const styles = StyleSheet.create({
   navBar: {
     width: windowWidth,
   },
+  
 });
 
 export default MainScreen;

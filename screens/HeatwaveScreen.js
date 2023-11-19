@@ -8,7 +8,7 @@ import { useNavigation } from "@react-navigation/native";
 import { FontFamily, FontSize, Color, Border } from "../GlobalStyles";
 import { Dimensions } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
-import {ToolbarDefaultIcon} from "../components/ToolbarDefaultIcon";
+import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -18,13 +18,13 @@ const HeatwaveScreen = () => {
 
   return (
     <View style={styles.heatwaveScreen}>
-      <ToolbarDefaultIcon />
+      
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
-      {/* <ScrollView>
-      <View style={styles.component2}>
-        <WeatherContainer />
-        <View style={[styles.background1, styles.background1Position]} />
-        <View style={styles.component3}>
+      
+        <View style={styles.component2}>
+          <WeatherContainer style={styles.WeatherContainer}/>
+          <View style={[styles.background1, styles.background1Position]} />
+          <View style={styles.component3}>
           <View style={[styles.vectorParent, styles.frameChildPosition]}>
             <Image
               style={[styles.dropDownWarningFrame, styles.frameLayout]}
@@ -75,22 +75,42 @@ const HeatwaveScreen = () => {
             Auf der Karte
           </Text>
         </Pressable>
-      </View>
-      </ScrollView> */}
-      <Image
-        style={styles.settingsbtnIcon1}
-        contentFit="cover"
-        source={require("../assets/settingsbtn.png")}
-      />
+        </View>
+      <Pressable
+        style={[styles.settingsbtnLayout]}
+        onPress={() => navigation.navigate("SettingsScreen")}
+      >
+        <Image
+          style={styles.icon}
+          contentFit="cover"
+          source={require("../assets/settingsbtn.png")}
+        />
+      </Pressable>
+      <ToolbarDefaultIcon />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  WeatherContainer: {
+    width: windowWidth,
+    position: "absolute",
+  },
   background1Position: {
     width: "100%",
     left: 0,
+  },
+  settingsbtnLayout: {
+    top: "5%",
+    right: "5%",
+    height: 60,
+    width: 60,
     position: "absolute",
+    zIndex: 4,
+  },
+  icon: {
+    height: "100%",
+    width: "100%",
   },
   //red frame again
   frameChildPosition: {
@@ -121,7 +141,7 @@ const styles = StyleSheet.create({
   },
   //white big thing
   background1: {
-    top: "15%",
+    top: "30%",
     backgroundColor: Color.white,
     height: "100%",
     width: "100%",
@@ -167,7 +187,7 @@ const styles = StyleSheet.create({
   component3: {
     height: "15.46%",
     width: "92.48%",
-    top: "20.32%",
+    top: "33%",
     right: "3.79%",
     bottom: "69.22%",
     left: "3.73%",
@@ -185,27 +205,27 @@ const styles = StyleSheet.create({
   mapButtonText: {
     height: "82.63%",
     width: "100%",
-    top: "31.58%",
-    left: "10.14%",
+    top: "25%",
+    left: "17%",
     fontFamily: FontFamily.inter,
     fontSize: FontSize.size_5xs,
     fontWeight: "700",
     color: Color.black,
+    alignSelf: "center",
+    margin: "auto",
   },
   //Mapbutton
   mapBtn: {
     top: "50%",
     left: "50%",
     width: "40%",
-    height: "5%",
+    height: 40,
     position: "absolute",
   },
   component2: {
     top: "11.58%",
-    left: -1,
-    width: "100%",
+    width: windowWidth,
     height: "100%",
-    overflow: "hidden",
   },
   settingsbtnIcon1: {
     top: "5%",
