@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     top: "31.58%",
     left: "5%",
     marginTop: "6%",
-    fontSize: "30ch",
+    fontSize: FontSize.size_2xs,
     fontWeight: "700",
     fontFamily: FontFamily.inter,
     color: Color.white,

@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, View, Text } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
 import { windowWidth } from "../tools/window_size";
+import { FontSize } from "../GlobalStyles";
 
 const ToolbarPanic = () => {
   const navigation = useNavigation();
@@ -45,7 +46,7 @@ const styles = StyleSheet.create({
     zIndex: 3,
   },
   btnTxt: {
-    fontSize: "20ch",
+    fontSize: FontSize.size_2xs,
     fontWeight: 700,
     position: "absolute",
     top: "30%",

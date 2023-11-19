@@ -7,6 +7,8 @@ import DropDownButton from "../components/DropDownButton";
 import { useNavigation } from "@react-navigation/native";
 import { FontFamily, FontSize, Color, Border } from "../GlobalStyles";
 import { Dimensions } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import {ToolbarDefaultIcon} from "../components/ToolbarDefaultIcon";
 
 export const windowWidth = Dimensions.get('window').width;
 export const windowHeight = Dimensions.get('window').height;
@@ -16,7 +18,9 @@ const HeatwaveScreen = () => {
 
   return (
     <View style={styles.heatwaveScreen}>
+      <ToolbarDefaultIcon />
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
+      {/* <ScrollView>
       <View style={styles.component2}>
         <WeatherContainer />
         <View style={[styles.background1, styles.background1Position]} />
@@ -72,15 +76,11 @@ const HeatwaveScreen = () => {
           </Text>
         </Pressable>
       </View>
+      </ScrollView> */}
       <Image
         style={styles.settingsbtnIcon1}
         contentFit="cover"
         source={require("../assets/settingsbtn.png")}
-      />
-      <Image
-        style={[styles.toolbardefaultIcon, styles.background1Position]}
-        contentFit="cover"
-        source={require("../assets/toolbardefault.png")}
       />
     </View>
   );
@@ -206,7 +206,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: "100%",
     overflow: "hidden",
-    position: "absolute",
   },
   settingsbtnIcon1: {
     top: "5%",

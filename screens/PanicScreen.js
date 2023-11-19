@@ -58,7 +58,7 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     left: -1,
-    width: 161,
+    width: "100%",
     overflow: "hidden",
     paddingRight: 1,
     justifyContent: "flex-end",

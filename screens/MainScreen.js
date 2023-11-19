@@ -186,7 +186,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: Color.black,
     fontFamily: FontFamily.inter,
-    fontSize: "20ch",
+    fontSize: FontSize.size_2xs,
     position: "absolute",
   },
   iconLayout: {
@@ -242,7 +242,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: Color.black,
     fontFamily: FontFamily.inter,
-    fontSize: "20ch",
+    fontSize: FontSize.size_2xs,
   },
   backgroundImageIconPosition: {
     top: "1%",
@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
     left: "6.25%",
     textAlign: "left",
     fontFamily: FontFamily.inter,
-    fontSize: "20ch",
+    fontSize: FontSize.size_2xs,
     fontWeight: "600",
   },
   background8: {
@@ -350,7 +350,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     color: Color.black,
     fontFamily: FontFamily.inter,
-    fontSize: "20ch",
+    fontSize: FontSize.size_2xs,
     position: "absolute",
     fontWeight: "500",
   },
@@ -427,14 +427,14 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   duBistOffline1: {
-    fontSize: "20ch",
+    fontSize: FontSize.size_2xs,
     fontWeight: "500",
     fontFamily: FontFamily.inter,
   },
   verbindeDichMit: {
     fontWeight: "300",
     fontFamily: FontFamily.inter,
-    fontSize: "11ch",
+    fontSize: FontSize.size_5xs,
   },
   duBistOfflineContainer: {
     height: "15.46%",
