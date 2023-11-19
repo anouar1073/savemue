@@ -19,13 +19,12 @@ const WeatherContainer = () => {
         />
         <View style={[styles.blur1, styles.blur1Position]} />
         <Text style={styles.aktuellesWetterHitzewelleContainer}>
-          <Text style={styles.aktuellesWetter}>{`Aktuelles Wetter
-`}</Text>
+          <Text style={styles.aktuellesWetter}>Aktuelles Wetter</Text>
           <Text style={styles.hitzewelle}>Hitzewelle</Text>
         </Text>
       </View>
 
-      <BackButton />
+      {/* <BackButton /> */}
     </View>
   );
 };
@@ -53,7 +52,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_7xs,
     position: "absolute",
     left: "45%",
-    top: "41%"
+    top: "41%",
   },
   backTransform2: {
     transform: [
@@ -65,7 +64,7 @@ const styles = StyleSheet.create({
     borderRadius: Border.br_7xs,
     position: "absolute",
     left: "45%",
-    bottom: "42%"
+    bottom: "42%",
   },
   backgroundImageIcon: {
     left: 1,
