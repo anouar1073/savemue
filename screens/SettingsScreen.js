@@ -4,6 +4,7 @@ import { Image } from "expo-image";
 import NavBar from "../components/NavBar";
 import { useNavigation } from "@react-navigation/native";
 import { Color, FontFamily, Border, FontSize } from "../GlobalStyles";
+import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 
 const SettingsScreen = () => {
   const navigation = useNavigation();
@@ -11,18 +12,13 @@ const SettingsScreen = () => {
   return (
     <View style={styles.settingsScreen}>
       <NavBar navBarPosition="absolute" navBarTop={0} navBarLeft={-1} />
+
       <View
         style={[
           styles.settingsScreeenBackground,
           styles.toolbardefaultIconPosition,
         ]}
       >
-        <Image
-          style={[styles.backgroundIcon, styles.backgroundPosition]}
-          contentFit="cover"
-          source={require("../assets/background2.png")}
-        />
-        <View style={[styles.background2, styles.background2Position]} />
         <View style={[styles.background2, styles.background2Position]} />
         <Text style={[styles.justSomeUseful1, styles.back1Typo]}>
           Just some useful settings for your app
@@ -34,23 +30,25 @@ const SettingsScreen = () => {
           <Text style={[styles.back1, styles.back1Typo]}>Back</Text>
         </Pressable>
       </View>
-      <Image
-        style={styles.settingsbtnIcon1}
-        contentFit="cover"
-        source={require("../assets/settingsbtn.png")}
-      />
-      <Image
-        style={[styles.toolbardefaultIcon, styles.toolbardefaultIconPosition]}
-        contentFit="cover"
-        source={require("../assets/toolbardefault.png")}
-      />
+
+      <Pressable
+        style={[styles.settingsbtnLayout]}
+        onPress={() => navigation.navigate("MainScreen")}
+      >
+        <Image
+          style={styles.icon}
+          contentFit="cover"
+          source={require("../assets/settingsbtn.png")}
+        />
+      </Pressable>
+      <ToolbarDefaultIcon />
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   toolbardefaultIconPosition: {
-    width: 160,
+    width: "100%",
     left: 0,
     position: "absolute",
   },
@@ -89,9 +87,9 @@ const styles = StyleSheet.create({
   justSomeUseful1: {
     width: "68.75%",
     left: "15.63%",
-    fontSize: FontSize.size_3xs,
+    fontSize: FontSize.size_2xs,
     fontWeight: "600",
-    top: "10.16%",
+    top: "15%",
     position: "absolute",
   },
   back1: {
@@ -104,8 +102,8 @@ const styles = StyleSheet.create({
     position: "absolute",
   },
   settingsScreeenBackground: {
-    top: 27,
-    height: 315,
+    top: 10,
+    height: "100%",
   },
   settingsbtnIcon1: {
     top: 0,
@@ -122,6 +120,18 @@ const styles = StyleSheet.create({
     backgroundColor: Color.darkgray,
     flex: 1,
     height: 324,
+    width: "100%",
+  },
+  settingsbtnLayout: {
+    top: "5%",
+    right: "5%",
+    height: 60,
+    width: 60,
+    position: "absolute",
+    zIndex: 4,
+  },
+  icon: {
+    height: "100%",
     width: "100%",
   },
 });
