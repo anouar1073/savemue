@@ -6,7 +6,7 @@ import { useNavigation } from "@react-navigation/native";
 import { FontSize, FontFamily, Color, Border } from "../GlobalStyles";
 import ToolbarDefaultIcon from "../components/ToolbarDefaultIcon";
 import settingsButtonStyles from "../style/settings_button";
-
+import Map from "../Map";
 const MapScreen = () => {
   const navigation = useNavigation();
 
